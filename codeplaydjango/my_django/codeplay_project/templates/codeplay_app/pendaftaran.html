@@ -1,0 +1,48 @@
+{% extends 'codeplay_app/base.html' %} {% load static %} {% block title %}
+Pendaftaran - CodePlay {% endblock %} {% block content %}
+<main>
+  <div class="container mt-5">
+    <h1 class="text-danger text-center">Form Pendaftaran</h1>
+    <div class="card p-4 mx-auto" style="max-width: 500px">
+      <form method="post" action="{% url 'pendaftaran' %}">
+        {% csrf_token %}
+
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-4 col-form-label"
+            >Nama Lengkap:</label
+          >
+          <div class="col-sm-8">{{ form.name }}</div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="age" class="col-sm-4 col-form-label">Usia:</label>
+          <div class="col-sm-8">{{ form.age }}</div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-4 col-form-label">Email:</label>
+          <div class="col-sm-8">{{ form.email }}</div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-4 col-form-label"
+            >Password:</label
+          >
+          <div class="col-sm-8">{{ form.password }}</div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="kelas" class="col-sm-4 col-form-label">Kelas:</label>
+          <div class="col-sm-8">{{ form.kelas }}</div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-warning rounded-5 mt-3">
+            Daftar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

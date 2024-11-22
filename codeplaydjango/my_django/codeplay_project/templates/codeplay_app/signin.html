@@ -1,0 +1,40 @@
+{% extends 'codeplay_app/base.html' %} {% load static %} {% block title %} Sign
+In - CodePlay {% endblock %} {% block content %}
+<main>
+  <div class="container mt-5">
+    <h1 class="text-danger text-center">Sign In</h1>
+    {% if messages %}
+    <div class="alert alert-danger">
+      {% for message in messages %} {{ message }} {% endfor %}
+    </div>
+    {% endif %}
+    <div class="card p-4 mx-auto" style="max-width: 400px">
+      <form method="POST" action="{% url 'signin' %}">
+        {% csrf_token %}
+
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-4 col-form-label">Email:</label>
+          <div class="col-sm-8">{{ form.email }}</div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-4 col-form-label"
+            >Password:</label
+          >
+          <div class="col-sm-8">{{ form.password }}</div>
+        </div>
+
+        <button type="submit" class="btn btn-warning rounded-5">Masuk</button>
+      </form>
+      <div class="mt-3 text-center">
+        <p>
+          Belum punya akun?
+          <a href="{% url 'pendaftaran' %}" class="text-warning"
+            >Daftar di sini</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

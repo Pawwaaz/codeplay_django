@@ -1,0 +1,47 @@
+{% extends 'codeplay_app/base.html' %} {% load static %} {% block title %}
+Tentang Kami - CodePlay {% endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="d-md-flex gap-5">
+    <div class="order-md-1">
+      <img
+        alt="Children learning with a teacher"
+        class="rounded-5 img-fluid"
+        height="300"
+        src="{% static 'img/about-img.png' %}"
+      />
+    </div>
+    <div class="pe-5">
+      <h1 class="mb-3 text-danger">Sejarah Berdirinya CodePlay</h1>
+      <p>
+        CodePlay didirikan pada tahun 2020 di Jakarta dengan tujuan membantu
+        anak-anak Indonesia mengenal dunia coding sejak dini. Berawal dari visi
+        untuk menciptakan generasi masa depan yang siap menghadapi revolusi
+        industri 4.0, CodePlay menawarkan pendekatan belajar yang menyenangkan,
+        interaktif, dan inovatif.
+      </p>
+      <p>
+        Dalam dua tahun pertama, CodePlay telah berkembang pesat dan memperluas
+        jangkauannya dengan membuka beberapa kelas online dan offline di seluruh
+        Indonesia. Fokus utama kami adalah anak-anak berusia 6-18 tahun, di mana
+        kami memberikan materi coding mulai dari tingkat pemula hingga tingkat
+        lanjut melalui program-program seperti Scratch, Roblox, dan Thunkable.
+      </p>
+      <p>
+        Seiring dengan perkembangan zaman, CodePlay terus berinovasi dengan
+        menawarkan lebih banyak program yang relevan dan mendukung perkembangan
+        kemampuan anak-anak dalam bidang teknologi dan pengembangan perangkat
+        lunak. Kami berkomitmen untuk menciptakan lingkungan belajar yang
+        mendukung, aman, dan menyenangkan bagi setiap anak.
+      </p>
+      <a href="{% url 'signin' %}"
+        ><button
+          type="button"
+          class="btn btn-warning rounded-5 shadow-sm fw-bold"
+        >
+          Daftar trial class
+        </button></a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}
